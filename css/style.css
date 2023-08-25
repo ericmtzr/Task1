@@ -1,0 +1,73 @@
+:root {
+  	--translateX: 1px;
+}
+
+@media only screen and (min-width: 700px) {
+  	body {
+    	background-color: rgb(93, 93, 207);
+  	}
+  	:root {
+  		--translateX: 700px;
+	}
+}
+
+@media only screen and (max-width: 699px) {
+  body {
+    background-color: pink;
+  }
+  :root {
+  	--translateX: 200px;
+  }
+}
+
+.flex-container {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+.header {
+	background-color: #333;
+	color: #fff;
+	padding: 20px;
+}
+
+.main {
+	flex-grow: 1;
+	padding: 20px;
+	color: #fff;
+}
+
+.footer {
+	background-color: #333;
+	color: #fff;
+	padding: 20px;
+}
+
+.box {
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    animation-name: slide;
+    animation-duration: 4s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes slide {
+  0% {
+      	transform: translateX(0);
+  	}
+  	50% {
+		transform: translateX(var(--translateX));
+  	}
+  	100% {
+      	transform: translateX(0);
+  	}
+}
+
+#grad1 {
+    height: 200px;
+    background-color: red;
+    background-image: linear-gradient(black, grey);
+}
